@@ -1,14 +1,12 @@
 "use client";
 
 import React from "react";
-
 interface ModalProps {
   isOpen: boolean;
   title: string;
   message: string;
   onClose: () => void;
 }
-
 const Modal: React.FC<ModalProps> = ({ isOpen, title, message, onClose }) => {
   if (!isOpen) return null;
 
