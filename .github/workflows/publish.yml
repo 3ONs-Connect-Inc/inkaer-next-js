@@ -1,0 +1,76 @@
+name: Build frontend and deploy worker
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Deploy
+
+    env:
+      NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
+      NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}
+      NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_PROJECT_ID }}
+      NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ secrets.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET }}
+      NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
+      NEXT_PUBLIC_FIREBASE_APP_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}
+      NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
+      NEXT_PUBLIC_PORT: ${{ secrets.NEXT_PUBLIC_PORT }}
+      NEXT_PUBLIC_CLOUDFLARE_WORKER_URL: ${{ secrets.NEXT_PUBLIC_CLOUDFLARE_WORKER_URL }}
+      NEXT_PUBLIC_MY_BUCKET: ${{ secrets.NEXT_PUBLIC_MY_BUCKET }}
+      NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+      NEXT_PUBLIC_CLIENT_URL: ${{ secrets.NEXT_PUBLIC_CLIENT_URL }}
+      SERVICE_ACCOUNT_KEY_FIREBASE: ${{ secrets.SERVICE_ACCOUNT_KEY_FIREBASE }}
+      FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+      FIREBASE_CLIENT_EMAIL: ${{ secrets.FIREBASE_CLIENT_EMAIL }}
+      FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Debug repo structure
+        run: ls -R
+
+      # ─────── FRONTEND BUILD ───────
+      - name: Install frontend dependencies
+        working-directory: client
+        run: npm install
+
+      - name: Generate Sitemap
+        working-directory: client
+        run: npm run sitemap
+
+      - name: Build frontend
+        working-directory: client
+        run: npm run build && npm run export
+
+      - name: Debug build output
+        working-directory: client
+        run: ls -la && ls -la out
+
+      - name: Push frontend build
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: build
+          FOLDER: client/out
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: "Build: ({sha}) {msg}"
+
+      # ─────── CLOUDFLARE WORKER DEPLOY ───────
+      - name: Install Wrangler
+        run: npm install -g wrangler
+
+      - name: Deploy Cloudflare Worker
+        working-directory: cloudflare-upload
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: wrangler deploy
