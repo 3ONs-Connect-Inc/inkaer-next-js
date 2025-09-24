@@ -8,8 +8,7 @@ import { collection, doc, setDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { navigation } from '@/constants';
-  
+
 export function useRegister() {
   const dispatch = useDispatch();
   const router = useRouter();

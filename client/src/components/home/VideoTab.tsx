@@ -1,7 +1,7 @@
 "use client";
 import  { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
-
+import Image from "next/image";
 
 export function VideoTab() {
   const captureTime = 8; 
@@ -39,6 +39,7 @@ const [hasStarted, setHasStarted] = useState(false);
 
         try {
           video.currentTime = Math.min(time, Math.max(0, video.duration || time));
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (e) {
           // some browsers might throw — resolve anyway after short timeout
           video.removeEventListener("seeked", onSeeked);
@@ -192,13 +193,20 @@ const [hasStarted, setHasStarted] = useState(false);
         />
 
         {/* Poster overlay image (non-blocking) — shows when not playing */}
-        {poster && !isPlaying && (
-          <img
-            src={poster}
-            alt="video poster"
-            className="absolute inset-0 w-full h-full object-cover rounded-lg pointer-events-none"
-          />
-        )}
+
+
+{poster && !isPlaying && (
+  <div className="absolute inset-0 w-full h-full">
+    <Image
+      src={poster}
+      alt="video poster"
+      fill
+      priority
+      className="object-cover rounded-lg pointer-events-none"
+    />
+  </div>
+)}
+
 
         {/* Hidden video used only for generating the poster */}
         {!poster && (

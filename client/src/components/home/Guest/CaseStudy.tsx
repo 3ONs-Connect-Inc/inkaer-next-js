@@ -32,7 +32,7 @@ const CaseStudy: React.FC = () => {
                     How Utter Vision scaled their non-engineering team with verified talent
                   </h4>
                   <p className="text-small leading-relaxed">
-                    Discover how this innovative company leveraged Inkaer's comprehensive verification 
+                    Discover how this innovative company leveraged Inkaer&apos;s comprehensive verification 
                     process to build a world-class team beyond engineering roles, achieving remarkable 
                     growth and operational efficiency.
                   </p>
@@ -74,8 +74,8 @@ const CaseStudy: React.FC = () => {
                     <TrendingUp className="h-12 w-12 text-blue-600" />
                   </div>
                   <blockquote className="text-base sm:text-lg font-medium text-foreground mb-4">
-                    "Inkaer didn't just help us hire faster - they helped us hire smarter. 
-                    The verification process gave us confidence in every candidate."
+                    &quot;Inkaer didn&apos;t just help us hire faster - they helped us hire smarter. 
+                    The verification process gave us confidence in every candidate.&quot;
                   </blockquote>
                   <cite className="text-small">
                     Sahand Vafaei, CEO of Utter Vision

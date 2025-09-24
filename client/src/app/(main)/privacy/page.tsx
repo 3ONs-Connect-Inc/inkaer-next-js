@@ -241,7 +241,7 @@ const Privacy = () => {
               </h2>
               <p className="text-small mb-4">
                 We may update our Privacy Policy from time to time. Changes will
-                be posted on this page with an updated "Last updated" date. If
+                be posted on this page with an updated &quot;Last updated&quot; date. If
                 the changes are material, we will provide reasonable notice
                 before they take effect.
               </p>

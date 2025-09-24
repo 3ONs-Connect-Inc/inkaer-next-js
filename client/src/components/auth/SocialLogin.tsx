@@ -30,7 +30,7 @@ function SocialLogin({ mode }: SocialLoginProps) {
     ) : (
       <div className="text-center">
         <p className="text-sm xs:text-base text-gray-600 font-sora">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link
             href="/sign-up"
             className="text-sm xs:text-base text-inkaer-blue hover:text-inkaer-dark-blue font-semibold"

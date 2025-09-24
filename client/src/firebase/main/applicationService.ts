@@ -3,8 +3,8 @@ import { db } from "@/firebase/config";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import DOMPurify from "dompurify";
 import { z } from "zod";
-import { uploadFileToR2 } from "@/utils/apis/r2Upload";
 import { ApplicationSchema } from "@/schemas/ApplicationSchema";
+import { uploadFileToR2 } from "@/utils/actions/r2Upload";
 
 
 export type ApplicationData = z.infer<typeof ApplicationSchema>;
@@ -14,8 +14,8 @@ export async function submitApplication(jobId: string, data: ApplicationData) {
   let resumeUrl: string;
   try {
     resumeUrl = await uploadFileToR2(data.resume, () => {});
-  } catch (err) {
-    throw new Error("Resume upload failed");
+  } catch (err: any) {
+    throw new Error("Resume upload failed", err);
   }
 
   // Sanitize text fields

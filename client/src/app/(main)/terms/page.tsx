@@ -35,7 +35,7 @@ const Terms = () => {
             <section className="mb-8">
               <h2 className="text-semibold-2xl mb-4">1. Acceptance of Terms</h2>
               <p className="text-small mb-4">
-                By engaging with Inkaer's services (whether as an employer or a
+                By engaging with Inkaer&apos;s services (whether as an employer or a
                 candidate), you agree to be bound by the terms of this
                 agreement. If you do not agree, please do not use our services.
               </p>
@@ -126,7 +126,7 @@ const Terms = () => {
               <ul className="list-disc list-inside text-small mb-6 space-y-2">
                 <li>
                   Our fees are success-based, calculated as a percentage of the
-                  candidate's base annual salary.
+                  candidate&apos;s base annual salary.
                 </li>
                 <li>
                   The specific fee percentage and payment terms will be
@@ -263,7 +263,7 @@ const Terms = () => {
               <h2 className="text-semibold-2xl mb-4">10. Changes to Terms</h2>
               <p className="text-small mb-4">
                 We may update these Terms at our discretion. Material changes
-                will be communicated in advance, with at least 30 days' notice
+                will be communicated in advance, with at least 30 days&apos; notice
                 where possible.
               </p>
             </section>

@@ -15,7 +15,7 @@ const VerificationDetails: React.FC = () => {
       <div className="mx-auto max-w-7xl padding">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-bold-5xl ">
-            What's Inside a Verification
+            What&apos;s Inside a Verification
           </h2>
           <p className="mt-6 desc">
             Every candidate goes through our comprehensive verification process
