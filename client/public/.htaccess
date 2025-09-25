@@ -1,16 +1,19 @@
-# Enable rewrite engine
+# Enable Rewrite Engine
 RewriteEngine On
+Options -MultiViews
 
-# ───── Force HTTPS ─────
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Serve existing files or directories as-is
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
-# ───── Redirect www → non-www (optional) ─────
-# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-# RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+# Try to serve .html version of the route (deep nested too)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
 
-# ───── Next.js Static Export SPA Fallback ─────
-# If file or folder doesn't exist, serve index.html
+# Fallback: send everything else to index.html (SPA behavior)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [L]
