@@ -1,13 +1,16 @@
-# Force HTTPS
+# Enable rewrite engine
 RewriteEngine On
+
+# ───── Force HTTPS ─────
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect www -> non-www (optional, uncomment if needed)
+# ───── Redirect www → non-www (optional) ─────
 # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 # RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
-# React Router SPA fallback
+# ───── Next.js Static Export SPA Fallback ─────
+# If file or folder doesn't exist, serve index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [L]
