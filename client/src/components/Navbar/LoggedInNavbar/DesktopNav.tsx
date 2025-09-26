@@ -46,4 +46,6 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ isActive, handleScroll }) => {
   );
 };
 
+
+
 export default DesktopNav;

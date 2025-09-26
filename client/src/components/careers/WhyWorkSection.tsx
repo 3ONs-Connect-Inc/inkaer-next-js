@@ -12,6 +12,8 @@ const fadeInUp: Variants = {
   }),
 }
 
+
+
 const perks = [
   {
     icon: <Users className="w-8 h-8 text-blue-600" />,

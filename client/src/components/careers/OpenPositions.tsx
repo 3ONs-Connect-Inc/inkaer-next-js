@@ -5,6 +5,8 @@ import { motion, type Variants } from "framer-motion"
 import type { CareerPost } from "@/types"
 import { useRouter } from "next/navigation";
 
+
+
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 1) => ({
@@ -13,6 +15,8 @@ const fadeInUp: Variants = {
     transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
   }),
 }
+
+
 
 interface OpenPositionsProps {
   jobs: CareerPost[]

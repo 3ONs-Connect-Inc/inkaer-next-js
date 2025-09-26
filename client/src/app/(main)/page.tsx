@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     siteName: "Inkaer",
   },
 };
-
 export default function HomePage() {
   return (
     <>
