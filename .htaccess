@@ -1,19 +1,25 @@
-# Enable Rewrite Engine
 RewriteEngine On
 Options -MultiViews
 
-# Serve existing files or directories as-is
+# Special case: map /admin/ to admin.html
+RewriteRule ^admin/?$ /admin.html [L]
+
+# Serve existing files or directories
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Try to serve .html version of the route (deep nested too)
+# Try .html fallback for any route
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
 
-# Fallback: send everything else to index.html (SPA behavior)
+# Try folder-style index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+# Fallback to root index.html
 RewriteRule ^ index.html [L]
