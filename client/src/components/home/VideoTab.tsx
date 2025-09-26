@@ -194,7 +194,7 @@ const [hasStarted, setHasStarted] = useState(false);
 
         {/* Poster overlay image (non-blocking) — shows when not playing */}
         {poster && !isPlaying && (
-          // eslint-disable-next-line @next/next/no-img-element
+        // eslint-disable-next-line @next/next/no-img-element
           <img
             src={poster}
             alt="video poster"
@@ -221,6 +221,7 @@ const [hasStarted, setHasStarted] = useState(false);
           </div>
         </div>
       </div>
+
 
       <p className="desc mb-2 text-center">
         Mechanical Engineering Proctored Interview
