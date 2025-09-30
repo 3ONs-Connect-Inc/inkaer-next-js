@@ -1,11 +1,9 @@
-
 import type { Metadata } from "next";
 import BlogDetailClient from "../../BlogDetailClient";
 import { getBlogPostsServer, getBlogPostBySlugServer } from "@/firebase/main/blogService.server";
 
-type Props = {
-  params: { id: string; slug: string };
-};
+type Params = Promise<{ id: string; slug: string }>;
+
 
 // Generate all blog paths at build time
 export async function generateStaticParams() {
@@ -17,8 +15,9 @@ export async function generateStaticParams() {
 }
 
 // Generate SEO metadata
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getBlogPostBySlugServer(params.slug);
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { slug } = await params; // ✅ await params
+  const post = await getBlogPostBySlugServer(slug);
 
   if (!post) {
     return {
@@ -33,7 +32,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-
-export default function BlogDetailPage({ params }: Props) {
-  return <BlogDetailClient slug={params.slug} />;
+// Blog detail page
+export default async function BlogDetailPage({ params }: { params: Params }) {
+  const { slug } = await params; // ✅ await params
+  return <BlogDetailClient slug={slug} />;
 }
