@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+
 export default function BlogDetailPage({ params }: Props) {
   return <BlogDetailClient slug={params.slug} />;
 }
