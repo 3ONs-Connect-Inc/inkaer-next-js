@@ -1,10 +1,8 @@
 
-import { getFirestore } from "firebase-admin/firestore";
 import type { BlogHeader, BlogPost } from "@/types";
+import { adminDb } from "../admin";
 
-const adminDb = getFirestore();
-
-// Blog header (server only)
+// Blog header
 export const getBlogHeaderServer = async (): Promise<BlogHeader | null> => {
   const doc = await adminDb.doc("settings/blogHeader").get();
   return doc.exists ? (doc.data() as BlogHeader) : null;
@@ -16,12 +14,7 @@ export const getBlogPostsServer = async (): Promise<BlogPost[]> => {
 };
 
 export const getBlogPostBySlugServer = async (slug: string): Promise<BlogPost | null> => {
-  const snap = await adminDb
-    .collection("posts")
-    .where("slug", "==", slug)
-    .limit(1)
-    .get();
-
+  const snap = await adminDb.collection("posts").where("slug", "==", slug).limit(1).get();
   if (snap.empty) return null;
 
   const doc = snap.docs[0];
