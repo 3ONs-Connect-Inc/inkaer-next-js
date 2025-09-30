@@ -20,3 +20,4 @@ export const getBlogPostBySlugServer = async (slug: string): Promise<BlogPost | 
   const doc = snap.docs[0];
   return { ...(doc.data() as BlogPost), id: doc.id };
 };
+   

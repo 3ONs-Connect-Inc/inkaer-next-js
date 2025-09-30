@@ -1,23 +1,25 @@
+// app/(main)/blog/[id]/[slug]/page.tsx
 import { Metadata } from "next";
 import BlogDetailClient from "../../BlogDetailClient";
 import { getBlogPostBySlugServer, getBlogPostsServer } from "@/firebase/main/blogService.server";
 
 type Props = {
-  params: Promise<{ id: string; slug: string }>; // 👈 params is a Promise now
+  params: Promise<{ id: string; slug: string }>; // 👈 make params a Promise
 };
 
-// Generate static params for SSG
+// Required for `output: export`
 export async function generateStaticParams() {
   const posts = await getBlogPostsServer();
+
   return posts.map((post) => ({
     id: post.id,
     slug: post.slug,
   }));
 }
 
-// Generate metadata dynamically
+// SEO metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params; // 👈 await before using
+  const { slug } = await params; // 👈 await params
   const post = await getBlogPostBySlugServer(slug);
 
   if (!post) {
@@ -29,7 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${post.title} – Inkaer`,
-    description: post.excerpt || `${post.title} - Read the full article on Inkaer.`,
+    description:
+      post.excerpt || `${post.title} - Read the full article on Inkaer.`,
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -39,8 +42,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// Page component
+// Blog detail page
 export default async function BlogDetailPage({ params }: Props) {
-  const { slug } = await params; // 👈 await before passing
+  const { slug } = await params; // 👈 await params
   return <BlogDetailClient slug={slug} />;
 }
