@@ -4,7 +4,6 @@ import { getBlogPostsServer, getBlogPostBySlugServer } from "@/firebase/main/blo
 
 type Params = Promise<{ id: string; slug: string }>;
 
-
 // Generate all blog paths at build time
 export async function generateStaticParams() {
   const posts = await getBlogPostsServer();
