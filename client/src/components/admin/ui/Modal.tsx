@@ -9,6 +9,8 @@ interface ModalProps {
   children: ReactNode;
 }
 
+
+
 export default function Modal({ isOpen, onClose, title, children }: ModalProps) {
   if (!isOpen) return null;
 
@@ -16,6 +18,7 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg w-full max-w-lg">
         {/* Header */}
+
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-lg font-semibold">{title}</h2>
           <button
