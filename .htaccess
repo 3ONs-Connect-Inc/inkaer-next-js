@@ -4,22 +4,22 @@ Options -MultiViews
 # Special case: map /admin/ to admin.html
 RewriteRule ^admin/?$ /admin.html [L]
 
-# Serve existing files or directories directly
+# Serve existing files or directories
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Try .html fallback
+# Try .html fallback for any route
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
 
 # Try folder-style index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule ^(.+?)/?$ $1/index.html [L]
-
-# Try Next.js App Router style: /page/index.html
-RewriteCond %{DOCUMENT_ROOT}/$1/page/index.html -f
-RewriteRule ^(.+?)/?$ $1/page/index.html [L]
 
 # Fallback to root index.html
 RewriteRule ^ index.html [L]
