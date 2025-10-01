@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 
 // Generate SEO metadata
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-  const { slug } = await params; // ✅ await params
+  const { slug } = await params; 
   const post = await getBlogPostBySlugServer(slug);
 
   if (!post) {
@@ -35,6 +35,6 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 // Blog detail page
 export default async function BlogDetailPage({ params }: { params: Params }) {
-  const { slug } = await params; // ✅ await params
+  const { slug } = await params; 
   return <BlogDetailClient slug={slug} />;
 }
