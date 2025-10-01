@@ -4,22 +4,10 @@ Options -MultiViews
 # Special case: map /admin/ to admin.html
 RewriteRule ^admin/?$ /admin.html [L]
 
-# Serve existing files or directories
+# Serve existing files or directories directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Try .html fallback for any route
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
-
-# Try folder-style index.html
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
-RewriteRule ^(.+?)/?$ $1/index.html [L]
-
-# Fallback to root index.html
+# Fallback to index.html for all other routes (SPA handling)
 RewriteRule ^ index.html [L]
