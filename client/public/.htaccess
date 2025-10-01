@@ -4,21 +4,18 @@ Options -MultiViews
 # Special case: map /admin/ to admin.html
 RewriteRule ^admin/?$ /admin.html [L]
 
+# First, try .html fallback for any route (with or without trailing slash)
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)$ $1.html [L]
+
 # Serve existing files or directories as-is
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Try .html fallback for any route (with or without trailing slash)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
-RewriteRule ^(.+?)$ $1.html [L]
-
 # Try folder-style index.html
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule ^(.+?)/?$ $1/index.html [L]
 
