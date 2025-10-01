@@ -1,13 +1,13 @@
 RewriteEngine On
-Options -MultiViews
+RewriteBase /
 
 # Special case: map /admin/ to admin.html
 RewriteRule ^admin/?$ /admin.html [L]
 
-# Serve existing files or directories directly
+# If a real file or directory exists, serve it
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Fallback to index.html for all other routes (SPA handling)
-RewriteRule ^ index.html [L]
+# Otherwise, always serve index.html (SPA fallback)
+RewriteRule . /index.html [L]
