@@ -13,6 +13,8 @@ export async function generateStaticParams() {
   }));
 }
 
+
+
 // Generate SEO metadata
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params; // ✅ await params
