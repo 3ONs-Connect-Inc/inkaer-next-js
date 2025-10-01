@@ -10,7 +10,7 @@ import type z from "zod";
 import  Link  from "next/link";
 import { ApplicationSchema, useSubmitApplication } from "@/hooks/main/useApplications";
 
-interface Props {
+interface Props {  
   jobId: string;
 }
 

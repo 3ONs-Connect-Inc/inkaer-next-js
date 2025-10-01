@@ -27,7 +27,7 @@ interface OpenPositionsProps {
 const OpenPositions = ({ jobs, footerTitle, footerSubtitle }: OpenPositionsProps) => {
     const router = useRouter();
 
-  return (
+  return (  
     <section className="bg-gray-50 py-16">
       <div className="mx-auto max-w-7xl padding">
         <motion.div
@@ -85,8 +85,7 @@ const OpenPositions = ({ jobs, footerTitle, footerSubtitle }: OpenPositionsProps
                 </div>
                 <div className="mt-4 lg:mt-0 lg:ml-6">
                   <button   onClick={() =>
-                      router.push(`/application?jobId=${job.id}`)
-                    }
+                      router.push(`/careers/application/${job.id}`)}
                   className="btn-responsive bg-blue-600 text-white rounded-lg hover:bg-blue-700 ">
                     Apply Now
                   </button>

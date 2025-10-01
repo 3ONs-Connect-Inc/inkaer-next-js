@@ -3,7 +3,7 @@ import { addDoc, collection, deleteDoc, doc, getDoc,  onSnapshot, orderBy, query
 import { db } from '../config'
 
 
-
+  
 
 const CAREERS_COL = 'careers'
 const CAREERS_META_DOC = 'careersMeta'

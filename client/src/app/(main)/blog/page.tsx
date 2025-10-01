@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BlogClient from "./BlogClient";
 import { PageLoader } from "@/components/ui/Spinner";
 import { Suspense } from "react";
-import { getBlogHeaderServer, getBlogPostsServer } from "@/firebase/main/blogService.server";
+import { getBlogHeaderServer, getBlogPostsServer } from "@/firebase/main/adminServer";
 
 // Dynamic metadata
 export async function generateMetadata(): Promise<Metadata> {

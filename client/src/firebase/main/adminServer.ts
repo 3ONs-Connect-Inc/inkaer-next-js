@@ -1,6 +1,6 @@
-
+import type { CareerPost } from "@/types";
+import { adminDb } from "../admin"; 
 import type { BlogHeader, BlogPost } from "@/types";
-import { adminDb } from "../admin";
 
 // Blog header
 export const getBlogHeaderServer = async (): Promise<BlogHeader | null> => {
@@ -21,3 +21,27 @@ export const getBlogPostBySlugServer = async (slug: string): Promise<BlogPost | 
   return { ...(doc.data() as BlogPost), id: doc.id };
 };
    
+
+
+//CAREERS
+const CAREERS_COL = "careers";
+
+// list all careers (for generateStaticParams)
+export async function getCareerPostsServer(): Promise<CareerPost[]> {
+  const snap = await adminDb.collection(CAREERS_COL).orderBy("createdAt", "desc").get();
+  return snap.docs.map((d) => ({
+    ...(d.data() as CareerPost),
+    id: d.id,   // put id last to avoid overwrite
+  }));
+}
+
+// Get single career post by ID
+export async function getCareerPostByIdServer(id: string): Promise<CareerPost | null> {
+  const doc = await adminDb.collection(CAREERS_COL).doc(id).get();
+  if (!doc.exists) return null;
+  return {
+    ...(doc.data() as CareerPost),
+    id: doc.id,
+  } as CareerPost;
+}
+

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import BlogDetailClient from "../../BlogDetailClient";
-import { getBlogPostsServer, getBlogPostBySlugServer } from "@/firebase/main/blogService.server";
+import { getBlogPostBySlugServer, getBlogPostsServer } from "@/firebase/main/adminServer";
 
 type Params = Promise<{ id: string; slug: string }>;
+
 
 // Generate all blog paths at build time
 export async function generateStaticParams() {
@@ -30,6 +31,18 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return {
     title: `${post.title} – Inkaer`,
     description: post.excerpt || `${post.title} - Read the full article on Inkaer.`,
+      openGraph: {
+      title: `${post.title} – Inkaer Careers`,
+      description: post.excerpt || `${post.title} - Apply now at Inkaer.`,
+      url: `https://inkaer.com/blog/${post.id}/${post.slug}`,
+      siteName: "Inkaer",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} – Inkaer Careers`,
+      description: post.excerpt || `${post.title} - Apply now at Inkaer.`,
+    },
   };
 }
 
