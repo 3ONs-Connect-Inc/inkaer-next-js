@@ -4,10 +4,18 @@ RewriteBase /
 # Special case: map /admin/ to admin.html
 RewriteRule ^admin/?$ /admin.html [L]
 
-# If a real file or directory exists, serve it
+# If a real file or directory exists, serve it directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Otherwise, always serve index.html (SPA fallback)
-RewriteRule . /index.html [L]
+# If .html file exists, serve it
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# If folder-style index.html exists, serve it
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+# Fallback to root index.html (for safety)
+RewriteRule ^ index.html [L]
