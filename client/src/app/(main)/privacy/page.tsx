@@ -1,24 +1,26 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy – Inkaer",
+  title: "Privacy Policy | Inkaer",
   description:
-    "Read Inkaer's Privacy Policy to learn how we collect, use, and protect your personal information when you visit our website or use our services.",
+    "Read Inkaer's Privacy Policy to learn what data we collect, how we use it, and your privacy rights when using our platform and services.",
   openGraph: {
-    title: "Privacy Policy – Inkaer",
+    title: "Privacy Policy | Inkaer",
     description:
-      "Read Inkaer's Privacy Policy to learn how we collect, use, and protect your personal information when you visit our website or use our services.",
-    url: "https://inkaer.com/privacy", 
+      "Read Inkaer's Privacy Policy — learn what we collect, how we use it, and your rights.",
+    url: "https://inkaer.com/privacy",
     siteName: "Inkaer",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy – Inkaer",
-    description:
-      "Read Inkaer's Privacy Policy to learn how we collect, use, and protect your personal information when you visit our website or use our services.",
+    title: "Privacy Policy | Inkaer",
+    description: "Read Inkaer's Privacy Policy to learn how we protect your data.",
   },
 };
+
+
+
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-white">

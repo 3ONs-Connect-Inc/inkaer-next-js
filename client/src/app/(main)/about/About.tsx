@@ -58,7 +58,7 @@ const About = () => {
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
+                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeInUp}
               >
                 <h2 className="text-bold-3xl mb-6">Our Mission</h2>

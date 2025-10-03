@@ -1,25 +1,24 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service – Inkaer",
+  title: "Terms of Service | Inkaer",
   description:
-    "Review Inkaer's Terms of Service to understand your rights, responsibilities, and the rules governing the use of our website and services.",
+    "Read the Terms of Service for Inkaer to understand the rules, responsibilities, and conditions for using our platform and services.",
   openGraph: {
-    title: "Terms of Service – Inkaer",
+    title: "Terms of Service | Inkaer",
     description:
-      "Review Inkaer's Terms of Service to understand your rights, responsibilities, and the rules governing the use of our website and services.",
-    url: "https://inkaer.com/terms", 
+      "Read the Terms of Service for Inkaer — the terms apply to the use of our platform and services.",
+    url: "https://inkaer.com/terms",
     siteName: "Inkaer",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Service – Inkaer",
+    title: "Terms of Service | Inkaer",
     description:
-      "Review Inkaer's Terms of Service to understand your rights, responsibilities, and the rules governing the use of our website and services.",
+      "Review Inkaer's Terms of Service to understand site usage rules and responsibilities.",
   },
 };
-
 
 const Terms = () => {
   return (

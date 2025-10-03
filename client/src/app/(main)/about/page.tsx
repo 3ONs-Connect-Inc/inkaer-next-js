@@ -3,24 +3,26 @@ import type { Metadata } from "next";
 import About from "./About";
 
 export const metadata: Metadata = {
-  title: "About – Inkaer",
+  title: "About Inkaer — Mission, Team & Values",
   description:
-    "Learn about Inkaer’s mission, values, and the team behind our platform. Discover how we’re transforming the way companies hire top engineering talent.",
+    "Learn about Inkaer’s mission to improve engineering hiring. Meet our team and discover how we combine verification, interviews, and tagging to create better hiring outcomes.",
   openGraph: {
-    title: "About – Inkaer",
+    title: "About Inkaer — Mission, Team & Values",
     description:
-      "Learn about Inkaer’s mission, values, and the team behind our platform. Discover how we’re transforming the way companies hire top engineering talent.",
+      "Discover Inkaer: our mission to refine engineering hiring, our team, and core values that guide product decisions.",
     url: "https://inkaer.com/about",
     siteName: "Inkaer",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About – Inkaer",
+    title: "About Inkaer — Mission, Team & Values",
     description:
-      "Learn about Inkaer’s mission, values, and the team behind our platform.",
+      "Learn about Inkaer’s mission, team, and how we improve engineering hiring.",
   },
 };
+
+
 export default function AboutPage() {
   return <About />;
 }

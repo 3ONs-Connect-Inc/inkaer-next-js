@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AppProviders } from "./providers";
+import { AppProviders } from "../components/providers";
 import ScrollToTop from "@/components/ScrollToTop";
 import BackToTopButton from "@/components/BackToTopButton";
 import { ActiveHashProvider } from "@/context/ActiveHashContext";
