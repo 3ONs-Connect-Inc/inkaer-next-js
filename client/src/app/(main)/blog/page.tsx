@@ -35,6 +35,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+
+
+
 export default async function BlogPage() {
   const initialMeta = await getBlogHeaderServer();
 
