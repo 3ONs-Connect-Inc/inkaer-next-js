@@ -73,7 +73,7 @@ export default function CareerFields({
    <div className="md:col-span-2">
   <label className="block text-sm font-medium">Short Description</label>
   <textarea
-    className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 text-sm"
+    className="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 text-sm"
     rows={3}
     value={form.description}
     onChange={(e) => setForm({ ...form, description: e.target.value })}
@@ -82,7 +82,7 @@ export default function CareerFields({
 <div className="md:col-span-2">
   <label className="block text-sm font-medium">Tagline</label>
   <textarea
-    className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 text-sm"
+    className="mt-1 block p-2 w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50 text-sm"
     rows={3}
     value={form.tagline}
     onChange={(e) => setForm({ ...form, tagline: e.target.value })}
