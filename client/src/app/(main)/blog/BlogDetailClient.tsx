@@ -28,7 +28,7 @@ export default function BlogDetailClient({ slug }: { slug: string }) {
       excerpt={post.excerpt}
       author={post.author}
       timestamp={moment(post.timestamp).fromNow()}
-      readTime={post.readTime}
+     // readTime={post.readTime}
       category={post.category}
       image={post.image}
       content={post.content}

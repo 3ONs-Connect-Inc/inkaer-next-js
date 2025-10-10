@@ -15,7 +15,7 @@ export type BlogPost = {
   excerpt: string;
   content: string;
   author: string;
-  readTime: string;
+  //readTime: string;
   image: string;
   timestamp: any;
 };

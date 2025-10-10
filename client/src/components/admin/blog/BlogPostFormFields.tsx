@@ -78,7 +78,7 @@ export default function BlogPostFormFields({
         )}
       </div>
 
-      <div>
+      {/* <div>
         <label className="block text-sm font-medium">Read Time</label>
         <input
           className="w-full border text-slate-900 rounded-lg px-3 py-2"
@@ -90,7 +90,7 @@ export default function BlogPostFormFields({
         {errors.readTime && (
           <p className="text-red-500 text-sm">{errors.readTime}</p>
         )}
-      </div>
+      </div> */}
 
       <ImageUpload
         newPost={newPost}

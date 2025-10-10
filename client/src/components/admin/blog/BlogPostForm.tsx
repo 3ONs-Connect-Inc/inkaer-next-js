@@ -34,7 +34,7 @@ export default function BlogPostForm({
     excerpt: "",
     content: "",
     author: "",
-    readTime: "5 min read",
+    //readTime: "5 min read",
     image: "", // will be filled after upload
     timestamp: Date.now(),
   });
@@ -47,7 +47,7 @@ export default function BlogPostForm({
       excerpt: "",
       content: "",
       author: "",
-      readTime: "5 min read",
+     // readTime: "5 min read",
       image: "",
       timestamp: Date.now(),
     });

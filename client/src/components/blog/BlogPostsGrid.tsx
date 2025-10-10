@@ -61,7 +61,7 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({ header, posts }) => {
                     <span className="flex items-center mr-4">
                       <User className="w-4 h-4 mr-1" />
                       {post.author}
-                    </span>
+                    </span> 
                     <span className="flex items-center">
                       <Calendar className="w-4 h-4 mr-1" />
                       {moment(post.timestamp).fromNow()}

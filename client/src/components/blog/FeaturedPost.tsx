@@ -9,12 +9,13 @@ interface FeaturedPostProps {
     id: string;
     slug: string;
     title: string;
-    excerpt: string;
+    excerpt: string; 
     image: string;
     author: string;
     category: string;  
     tags: string;
-    readTime: string;
+     content: string;
+    //readTime: string;
     timestamp: string;
   };
 }
@@ -43,7 +44,7 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
                   <Calendar className="w-4 h-4 mr-2" />
                   {moment(post.timestamp).fromNow()}
                 </span>
-                <span>{post.readTime}</span>
+                    <span>{(post.content?.length / 1000).toFixed(0)} mins read</span>
               </div>
               <Link
                 href={`/blog/${post.id}/${post.slug}`}
