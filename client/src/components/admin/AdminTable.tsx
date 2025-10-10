@@ -63,8 +63,8 @@ export function AdminTable<T>({
                             ""}
                       </td>
                     ))}
-                  </tr>
-                ))
+                  </tr>  
+                ))   
               )}
             </tbody>
           </table>

@@ -59,6 +59,7 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({
                  {timestamp}  
                 </span>
                 <span>{readTime}</span>
+                 {/* {(post.content?.length / 1000).toFixed(0)} mins read */}
               </div>
             </div>
           </div>

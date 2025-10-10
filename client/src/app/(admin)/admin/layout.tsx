@@ -9,9 +9,11 @@ import { useMediaQuery } from '@uidotdev/usehooks';
 import { cn } from "@/utils/clsx";
 import { Sidebar } from "@/components/admin/layouts/sidebar";
 import { Header } from "@/components/admin/layouts/header";
+import { useSessionListener } from "@/hooks/auth/useSessionListener";
 
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
+   useSessionListener();
   const { user, role, loading } = useSelector((state: RootState) => state.session);
   const router = useRouter();
   const [authorized, setAuthorized] = useState(false);

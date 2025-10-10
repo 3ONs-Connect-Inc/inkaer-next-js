@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import JobDetails from "@/components/careers/application/JobDetails";
-//import ApplicationForm from "@/components/careers/application/ApplicationForm";
+import ApplicationForm from "@/components/careers/application/ApplicationForm";
 import { PageLoader } from "@/components/ui/Spinner";
 import { useCareerPosts } from "@/hooks/main/useCareers";
 
@@ -48,7 +48,7 @@ export default function Application({ jobId }: ApplicationProps) {
           </Card>
 
           <Card className="bg-white shadow-sm border border-gray-200">
-            {/* <ApplicationForm jobId={jobId} /> */}
+            <ApplicationForm jobId={jobId} /> 
           </Card>
         </div>
       </main>

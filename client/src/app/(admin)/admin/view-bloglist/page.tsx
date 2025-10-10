@@ -7,7 +7,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { addBlogPost, deleteBlogPost, getBlogHeader, saveBlogHeader } from "@/firebase/main/blogService";
 import { useBlogPosts } from "@/hooks/admin/useAdminBlog";
 
-export default function AdminBlog() {
+export default function AdminBlog() {  
   const queryClient = useQueryClient();
 
   const { data: header, isLoading: headerLoading } = useQuery({

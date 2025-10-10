@@ -5,9 +5,9 @@ interface User {
   email: string;
   displayName?: string;
   role?: "admin" | "user"; 
-}
+}  
   
-interface SessionState {
+interface SessionState {   
   user: User | null;
   role: "admin" | "user" | null;
   loading: boolean;

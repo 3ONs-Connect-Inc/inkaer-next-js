@@ -4,22 +4,31 @@ import Application from "../Application";
 
 type Params = { jobId: string };
 
+//  Always return at least one dummy param to prevent build crash
 export async function generateStaticParams() {
-  const posts = await getCareerPostsServer();
-  return posts.map((p) => ({ jobId: p.id }));
+  try {
+    const posts = await getCareerPostsServer();
+    if (!posts || posts.length === 0) {
+      // Return a placeholder so Next.js still generates a page
+      return [{ jobId: "placeholder" }];
+    }
+    return posts.map((p) => ({ jobId: p.id }));
+  } catch {
+    // In case Firestore throws an error (e.g. no credentials)
+    return [{ jobId: "placeholder" }];
+  }
 }
 
-export async function generateMetadata(
-  props: { params: Promise<Params> }
-): Promise<Metadata> {
-  const { jobId } = await props.params;  
+//  Metadata generation now safe if job not found
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { jobId } = params;
   const post = await getCareerPostByIdServer(jobId);
 
-  if (!post) {
+  if (!post || jobId === "placeholder") {
     return {
       title: "Job not found – Inkaer Careers",
-      description: "The job you’re looking for doesn’t exist.",
-
+      description: "The job you’re looking for doesn’t exist or is unavailable.",
+    
     };
   }
 
@@ -41,9 +50,7 @@ export async function generateMetadata(
   };
 }
 
-export default async function ApplicationPage(
-  { params }: { params: Promise<Params> }
-) {
-  const { jobId } = await params;  
+export default async function ApplicationPage({ params }: { params: Params }) {
+  const { jobId } = params;
   return <Application jobId={jobId} />;
 }

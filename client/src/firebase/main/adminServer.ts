@@ -45,3 +45,4 @@ export async function getCareerPostByIdServer(id: string): Promise<CareerPost | 
   } as CareerPost;
 }
 
+  

@@ -404,7 +404,7 @@ export const navbarLinks = [
             {
                 label: "Customers",
                 icon: Users,
-                path: "/admin/view-users",
+                path: "/admin/view-all-users",
             },
             {
                 label: "Manage Users",
