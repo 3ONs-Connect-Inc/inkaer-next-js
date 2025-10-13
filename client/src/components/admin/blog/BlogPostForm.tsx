@@ -10,7 +10,7 @@ import BlogPostFormFields from "./BlogPostFormFields";
 import { BlogPostSchema } from "@/schemas/BlogPostSchema";
 
 
-export default function BlogPostForm({
+export default function BlogPostForm({  
   posts,
   onAddPost,
   onDeletePost,
@@ -56,9 +56,11 @@ export default function BlogPostForm({
     setSelectedFile(null);
   };
 
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
+
 
     const validation = BlogPostSchema.safeParse(newPost);
     if (!validation.success) {

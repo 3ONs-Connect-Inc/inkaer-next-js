@@ -122,7 +122,7 @@ export default function BlogPostFormFields({
         ></textarea>
         {errors.excerpt && (
           <p className="text-red-500 text-sm">{errors.excerpt}</p>
-        )}
+        )}  
       </div>
 
       <div className="md:col-span-2">
