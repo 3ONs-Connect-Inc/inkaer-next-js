@@ -21,3 +21,4 @@ RewriteRule ^(.+?)/?$ $1/index.html [L]
 
 # Fallback to root index.html (SPA style)
 RewriteRule ^ index.html [L]
+
