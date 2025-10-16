@@ -1,17 +1,18 @@
 "use client";
 
+import ApplicationForm from "@/components/careers/application/ApplicationForm";
+import JobDetails from "@/components/careers/application/JobDetails";
 import { Card } from "@/components/ui/card";
 import { PageLoader } from "@/components/ui/Spinner";
 import { useCareerPosts } from "@/hooks/main/useCareers";
-import JobDetails from "./JobDetails";
-import ApplicationForm from "./ApplicationForm";
+import { useSearchParams } from "next/navigation";
 
 
-type ApplicationProps = {
-  jobId: string;
-};
 
-export default function Application({ jobId }: ApplicationProps) {
+export default function Application() {
+    // Read query params on client side (CSR-safe)
+  const searchParams = useSearchParams();
+  const jobId = searchParams.get("jobId");
   const { data: jobs, isLoading } = useCareerPosts();
   const currentJob = jobs?.find((j) => j.id === jobId);
 
@@ -49,7 +50,7 @@ export default function Application({ jobId }: ApplicationProps) {
           </Card>
 
           <Card className="bg-white shadow-sm border border-gray-200">
-            <ApplicationForm jobId={jobId} />
+            <ApplicationForm jobId={jobId!} />
           </Card>
         </div>
       </main>

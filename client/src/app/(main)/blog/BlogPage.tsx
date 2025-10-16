@@ -1,10 +1,12 @@
 "use client";
 
+import BlogHero from "@/components/blog/BlogHero";
+import BlogPostsGrid from "@/components/blog/BlogPostsGrid";
+import FeaturedPost from "@/components/blog/FeaturedPost";
+import { PageLoader } from "@/components/ui/Spinner";
 import { useBlogHeader, useBlogPosts } from "@/hooks/main/useBlog";
-import BlogHero from "./BlogHero";
-import FeaturedPost from "./FeaturedPost";
-import BlogPostsGrid from "./BlogPostsGrid";
-import { PageLoader } from "../ui/Spinner";
+
+
 
 export default function Blog() {
   const { data: header, isLoading: headerLoading } = useBlogHeader();
