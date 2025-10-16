@@ -58,9 +58,20 @@ export const BtnLoader = () => {
 
 export const PageLoader = () => {
   return (
-    <div className="flex items-center justify-center mt-4 mb-4">
-      <Spinner size={45} />
-    </div>
+  <div className="flex justify-center items-center h-screen">
+      <div className="relative w-16 h-4">
+        <div className="absolute top-0 left-0 w-6 h-6 bg-blue-500 rounded-full animate-ellipsis1"></div>
+        <div className="absolute top-0 left-4 w-6 h-6 bg-blue-500 rounded-full animate-ellipsis2"></div>
+        <div className="absolute top-0 left-8 w-6 h-6 bg-blue-500 rounded-full animate-ellipsis3"></div>
+        <div className="absolute top-0 left-12 w-6 h-6 bg-blue-500 rounded-full animate-ellipsis4"></div>
+      </div>
+  {/* <div className="d-flex justify-content-center center-loader">
+      <div className="lds-ellipsis"></div>
+     <div className="flex items-center justify-center mt-4 mb-4">
+       <Spinner size={45} />
+      */}
+</div>
+
   );
 };
 

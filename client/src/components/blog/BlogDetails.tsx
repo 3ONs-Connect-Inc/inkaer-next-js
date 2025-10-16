@@ -3,11 +3,11 @@
 import { useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import moment from "moment";
-import ArticleLayout from "@/components/blog/ArticleLayout";
 import { listenToBlogPostBySlug } from "@/firebase/main/blogService";
 import { useBlogPost } from "@/hooks/main/useBlog";
+import ArticleLayout from "./ArticleLayout";
 
-export default function BlogDetailClient({ slug }: { slug: string }) {
+export default function BlogDetails({ slug }: { slug: any }) {
   const queryClient = useQueryClient();
   const { data: post, isLoading, isError } = useBlogPost(slug);
 

@@ -84,11 +84,10 @@ const OpenPositions = ({ jobs, footerTitle, footerSubtitle }: OpenPositionsProps
                   </div>
                 </div>
                 <div className="mt-4 lg:mt-0 lg:ml-6">
-                  <button   onClick={() =>
-                      router.push(`/careers/application/${job.id}`)}
+                  <button   onClick={() => router.push(`/careers/application/?jobId=${job.id}`)}
                   className="btn-responsive bg-blue-600 text-white rounded-lg hover:bg-blue-700 ">
                     Apply Now
-                  </button>
+                  </button>  
                 </div>  
               </div>
             </motion.div>

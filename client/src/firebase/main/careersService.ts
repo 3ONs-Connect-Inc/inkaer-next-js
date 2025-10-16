@@ -8,7 +8,11 @@ import { db } from '../config'
 const CAREERS_COL = 'careers'
 const CAREERS_META_DOC = 'careersMeta'
 
-
+export const getCareerPostById = async (id: string) => {
+  const ref = doc(db, "careers", id);
+  const snap = await getDoc(ref);
+  return snap.exists() ? { id: snap.id, ...snap.data() } : null;
+};
 export function listCareerPosts(): Promise<CareerPost[]> {
   return new Promise((resolve) => {
     const q = query(collection(db, CAREERS_COL), orderBy("createdAt", "desc"))

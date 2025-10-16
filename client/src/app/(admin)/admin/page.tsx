@@ -17,12 +17,13 @@ import {
 import { ThemeContext } from "@/context/ThemeContext";
 import { useDashboardStats } from "@/hooks/admin/useDashboardStats";
 import Image from "next/image";
+import { PageLoader } from "@/components/ui/Spinner";
 
 export default function DashboardPage() {
   const { theme } = useContext(ThemeContext);
   const { data: stats, isLoading } = useDashboardStats();
 
-  if (isLoading) return <p>Loading dashboard...</p>;
+  if (isLoading) return <PageLoader />;
 
   return (
     <div className="flex flex-col gap-y-4">

@@ -1,49 +1,55 @@
 import type { Metadata } from "next";
-import BlogClient from "./BlogClient";
-import { PageLoader } from "@/components/ui/Spinner";
+import { getBlogHeader, getBlogPosts } from "@/firebase/main/blogService";
 import { Suspense } from "react";
-import { getBlogHeaderServer, getBlogPostsServer } from "@/firebase/main/adminServer";
+import { PageLoader } from "@/components/ui/Spinner";
+import Blog from "@/components/Blog";
 
-// Dynamic metadata
 export async function generateMetadata(): Promise<Metadata> {
-  const header = await getBlogHeaderServer();
- const posts = await getBlogPostsServer();
+  let header: any = null;
+  let posts: any[] = [];
+
+  try {
+    header = await getBlogHeader();
+    posts = await getBlogPosts();
+  } catch (e) {
+    console.error("Metadata fetch error:", e);
+  }
+
+  const title = `${header?.heroTitle || "Blog"} – Inkaer`;
+  const description =
+    header?.heroSubtitle ||
+    posts?.[0]?.excerpt?.slice(0, 150) + "…" ||
+    "Read the latest articles, insights, and engineering trends from Inkaer.";
+
+  const author = posts?.[0]?.author || "Inkaer";
 
   return {
-    title: `${header?.heroTitle || "Blog"} – Inkaer`,
-    description:
-      header?.heroSubtitle ||
-      posts?.[0]?.excerpt?.slice(0, 150) + "…" ||
-      "Read the latest articles, insights, and engineering trends from Inkaer.",
+    title,
+    description,
     openGraph: {
-      title: header?.heroTitle || "Blog – Inkaer",
-      description:
-        header?.heroSubtitle ||
-        posts?.[0]?.excerpt?.slice(0, 150) + "…" ||
-        "Read the latest articles, insights, and engineering trends from Inkaer.",
-      type: "article",
-      authors: [posts?.[0]?.author || "Inkaer"],
+      title,
+      description,
+      type: "website",
+      url: "https://inkaer.com/blog",
+      siteName: "Inkaer",
     },
     twitter: {
       card: "summary_large_image",
-      title: header?.heroTitle || "Blog – Inkaer",
-      description:
-        header?.heroSubtitle ||
-      posts?.[0]?.excerpt?.slice(0, 150) + "…" ||
-        "Read the latest articles, insights, and engineering trends from Inkaer.",
+      title,
+      description,
+    },
+    other: {
+      author, 
     },
   };
 }
 
-
-
-
-export default async function BlogPage() {
-  const initialMeta = await getBlogHeaderServer();
-
+export default function BlogPage() {
   return (
     <Suspense fallback={<PageLoader />}>
-      <BlogClient initialMeta={initialMeta} />
+      <Blog  />
     </Suspense>
   );
 }
+
+

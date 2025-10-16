@@ -68,7 +68,7 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({ header, posts }) => {
                     </span>
                   </div>
                   <Link
-                    href={`/blog/${post.id}/${post.slug}`}
+                     href={`/blog/post/?id=${post.id}&slug=${encodeURIComponent(post.slug)}`}
                     className="text-sm sm:text-base inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                   >
                     Read more
