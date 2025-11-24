@@ -27,11 +27,11 @@ const VerificationDetails: React.FC = () => {
             {verificationItems.map((item) => (
               <AccordionItem 
                 key={item.id} 
-                value={item.id}
+                value={item.id}  
                 className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
               >
-                <AccordionTrigger className="px-8 py-6 hover:no-underline">
-                  <div className="flex flex-col xxs:flex-row items-center gap-4 text-left">
+                <AccordionTrigger className="px-2 sm:px-8 py-6 hover:no-underline ">
+                  <div className="flex items-center gap-2 sm:gap-4 text-left">
                     <div className={`p-3 rounded-lg ${item.bgColor}`}>
                       <item.icon className={`w-4 sm:w-6 h-4 sm:h-6 ${item.color}`} />
                     </div>
@@ -41,7 +41,7 @@ const VerificationDetails: React.FC = () => {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-8 pb-6">
-                  <p className="desc leading-relaxed flex text-center">
+                  <p className="desc leading-relaxed text-left ml-6 sm:ml-16">
                     {item.description}
                   </p>
                 </AccordionContent>

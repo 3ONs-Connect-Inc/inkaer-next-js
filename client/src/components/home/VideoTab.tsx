@@ -224,12 +224,11 @@ const [hasStarted, setHasStarted] = useState(false);
 
 
       <p className="desc mb-2 text-center">
-        Mechanical Engineering Proctored Interview
+        Mechanical Engineering Proctured Interview
       </p>
       <p className="text-small text-center">Duration: 10 minutes</p>
       <p className="mt-4 desc text-center">
-        10-minute condensed recording of the candidate answering
-        portfolio-based technical questions.
+     10-minute condensed recording of the candidate answering portfolio-based technical questions.
       </p>
     </div>
   );

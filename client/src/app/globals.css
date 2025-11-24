@@ -143,7 +143,7 @@
   @apply text-sm font-normal leading-relaxed font-sora tracking-tight text-blue-100 sm:text-lg;
 }
 .desc-bold{
-  @apply text-base font-semibold leading-relaxed font-sora tracking-tight text-foreground  xs:text-xl;
+  @apply text-base font-semibold leading-relaxed  tracking-tight text-foreground  xs:text-xl;
 }
 .base-text{
   @apply text-sm sm:text-base font-normal leading-relaxed  tracking-tight font-sora text-muted-foreground;

@@ -15,7 +15,7 @@ const CandidatePackage: React.FC = () => {
             Candidate Package Sample
           </h2>
           <p className="mt-6 desc">
-            See the three deliverables you&apos;ll receive for every candidate in your shortlist
+            See the three deliverables you&apos;ll receive for every candidate  you get from Inkaer.
           </p>
         </div>  
 

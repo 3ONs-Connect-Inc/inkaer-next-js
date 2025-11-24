@@ -30,7 +30,7 @@ const OrganizationalBenefits: React.FC = () => {
                 className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
               >
                 <AccordionTrigger className="px-2 sm:px-8 py-6 hover:no-underline">
-                  <div className="flex flex-col xxs:flex-row items-center gap-2 sm:gap-4 text-left">
+                  <div className="flex items-center gap-2 sm:gap-4 text-left">
                     <div className={`p-3 rounded-lg ${benefit.bgColor}`}>
                       <benefit.icon className={` w-4 sm:w-6 h-4 sm:h-6 ${benefit.color}`} />
                     </div>
@@ -39,8 +39,8 @@ const OrganizationalBenefits: React.FC = () => {
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-2 sm:px-8 pb-6">
-                  <p className="text-sm sm:text-lg  text-gray-600 flex justify-center text-center leading-relaxed ">
+                <AccordionContent className="px-8 pb-6">
+                  <p className=" desc leading-relaxed text-left ml-6 sm:ml-16">
                     {benefit.description}
                   </p>
                 </AccordionContent>

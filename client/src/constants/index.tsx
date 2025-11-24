@@ -19,55 +19,59 @@ import { PortfolioViewer } from "@/components/home/pdfViewer/PortfolioViewerWrap
 export  const features = [
     {
       icon: TrendingDown,
-      number: '68%',
-      title: 'Hiring Cost Reduction',
-      description: 'Eliminate agency fees and reduce time-to-hire costs with our verified talent pool.',
-      color: 'text-green-600',
-      bgColor: 'bg-green-100'
+      number: "68%",
+      title: "Hiring Cost Reduction",
+      description: "Eliminate agency fees and reduce time-to-hire costs with our verified talent pool.",
+      color: "text-green-600",
+      bgColor: "bg-green-100",
     },
     {
       icon: Clock,
-      number: '3X',
-      title: 'Faster Hiring Timeline',
-      description: 'From job posting to shortlist delivery in just 48 hours, interviews within 24h.',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-100'
+      number: "3X",
+      title: "Faster Hiring Timeline",
+      description: "From role intake to verified candidate packages in just 48 hours, final interviews within 24h.",
+      color: "text-blue-600",
+      bgColor: "bg-blue-100",
     },
     {
       icon: Shield,
-      number: '100%',
-      title: 'Bad Hire Avoidance',
-      description: 'Every engineer is pre-verified with portfolio review and technical assessment.',
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-100'
-    }
+      number: "100%",
+      title: "Bad Hire Avoidance",
+      description:
+        "Every engineer is pre-verified through portfolio review, tool checks, and a recorded technical interview.",
+      color: "text-orange-600",
+      bgColor: "bg-orange-100",
+    },
   ];
 
 export   const benefits = [
     {
-      id: 'skip-resume-roulette',
+      id: "skip-resume-roulette",
       icon: UserX,
-      title: 'Skip Resume Roulette',
-      description: 'No more sifting through hundreds of unqualified resumes. Every candidate in your shortlist has been pre-screened and verified, with portfolio work that directly relates to your engineering needs.',
-      color: 'text-red-600',
-      bgColor: 'bg-red-50'
+      title: "Skip Resume Roulette",
+      description:
+        "No more sifting through hundreds of unqualified resumes. Every candidate you receive has been pre-verified with relevant portfolio work and a recorded technical interview.",
+      color: "text-red-600",
+      bgColor: "bg-red-50",
     },
     {
-      id: 'tuned-shortlists',
+      id: "tuned-shortlists",
       icon: Target,
-      title: 'Shortlists Tuned to Your Tools & Domain only.',
-      description: 'Candidates are specifically matched to your technology stack, industry domain, and engineering methodologies. Whether you need SolidWorks expertise or aerospace experience, we deliver precisely what you need.',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50'
+      title: "Candidates Tuned to Your Tools & Domain",
+      description:
+        "Candidates are specifically matched to your technology stack, industry domain, and engineering methodologies. Whether you need SolidWorks expertise or aerospace experience, we deliver precisely what fits your team.",
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
     },
     {
-      id: 'interview-booking',
+      id: "interview-booking",
       icon: Calendar,
-      title: 'We Book Interviews, You Focus on Final Decisions.',
-      description: 'Our team handles all the coordination and scheduling logistics. You simply review the verified candidates and focus your time on making the final hiring decision that matters most.',
-      color: 'text-green-600',
-      bgColor: 'bg-green-50'
-    }
+      title: "We Book Interviews, You Focus on Final Decisions",
+      description:
+        "Our team handles all coordination and scheduling. You receive pre-interviewed, verified candidates, and only invest your time in final interviews that matter.",
+      color: "text-green-600",
+      bgColor: "bg-green-50",
+    },
   ];
 
 export  const tabs = [
@@ -131,38 +135,42 @@ export  const tabs = [
 
 
 export  const verificationItems = [
-    {
-      id: 'portfolio-check',
+   {
+      id: "portfolio-check",
       icon: CheckCircle,
-      title: 'Portfolio originality check (project-level)',
-      description: 'Each project in the candidate\'s portfolio is manually reviewed for authenticity, technical complexity, and originality. We verify that the work is genuinely created by the candidate and meets industry standards.',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50'
+      title: "Portfolio originality check (project-level)",
+      description:
+        "Each project in the candidate's portfolio is manually reviewed for authenticity, technical complexity, and originality. We verify that the work is genuinely created by the candidate and meets industry standards.",
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
     },
     {
-      id: 'industry-tagging',
+      id: "industry-tagging",
       icon: Tag,
-      title: 'Industry fit tagging (FEA, DFM, DTV, etc.)',
-      description: 'Candidates are tagged based on their specific industry experience and technical skills such as Finite Element Analysis (FEA), Design for Manufacturing (DFM), and Design to Value (DTV) methodologies.',
-      color: 'text-green-600',
-      bgColor: 'bg-green-50'
+      title: "Industry fit tagging (FEA, DFM, DTV, etc.)",
+      description:
+        "Candidates are tagged based on their specific industry experience and technical skills such as Finite Element Analysis (FEA), Design for Manufacturing (DFM), and Design to Value (DTV) methodologies.",
+      color: "text-green-600",
+      bgColor: "bg-green-50",
     },
     {
-      id: 'interview-recording',
+      id: "interview-recording",
       icon: Video,
-      title: '10‑minute technical interview recording',
-      description: 'A condensed recording of the candidate answering portfolio-based technical questions, demonstrating their communication skills and deep understanding of their work.',
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50'
+      title: "10‑minute technical interview recording",
+      description:
+        "A condensed recording of the candidate answering portfolio-based technical interview questions, demonstrating their communication skills and deep understanding of their work.",
+      color: "text-purple-600",
+      bgColor: "bg-purple-50",
     },
     {
-      id: 'pdf-qr',
+      id: "pdf-qr",
       icon: FileText,
-      title: 'PDF + QR to online viewer',
-      description: 'Comprehensive PDF report with QR code linking to an interactive online viewer where you can explore the candidate\'s portfolio, verification details, and interview recording.',
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50'
-    }
+      title: "PDF + QR to online viewer",
+      description:
+        "Comprehensive PDF report with QR code linking to an interactive online viewer where you can explore the candidate's portfolio, verification details, and interview recording.",
+      color: "text-orange-600",
+      bgColor: "bg-orange-50",
+    },
   ];
 
  export  const plans = [
@@ -221,30 +229,36 @@ export  const verificationItems = [
   ];
 
 export const faqs = [
-    {
+       {
       question: "How does Inkaer verify engineers?",
-      answer: "We conduct a comprehensive verification process through reverse CAD metadata scans, Turnitin plagiarism checks, AI-content forensics, industry fit tagging, and a rigorous portfolio-based technical interview, condensed into a 10-minute highlight reel for employers. This ensures every engineer has proven skills and real project experience."
+      answer:
+        "We conduct a comprehensive verification process that includes reverse CAD metadata scans, plagiarism checks, AI-content forensics, industry fit tagging, and a rigorous portfolio-based technical interview. Each interview is condensed into a 10-minute highlight reel for employers, ensuring every engineer has real, verified project experience.",
     },
     {
       question: "What's the typical turnaround time?",
-      answer: "We deliver your shortlist of 5 verified engineers within 48 hours of receiving your requirements. Our team works around the clock to source, verify, and match engineers to your specific needs."
+      answer:
+        "We deliver 3-5 verified engineers within 48 hours of receiving your requirements. Each engineer has already completed the full Inkaer verification and technical interview process.",
     },
     {
       question: "Can you find engineers for specific tools or industries?",
-      answer: "Absolutely. We specialize in finding engineers with specific tool expertise (SolidWorks, ANSYS, etc.) and industry experience (HVAC, automotive, aerospace, medical devices, etc.). Our matching algorithm ensures candidates fit your exact technical requirements."
+      answer:
+        "Absolutely. We specialize in finding engineers with specific tool expertise (SolidWorks, ANSYS, etc.) and industry experience (HVAC, automotive, aerospace, medical devices, etc.). Our matching algorithm ensures candidates fit your exact technical requirements.",
     },
     {
       question: "What if none of the candidates are suitable?",
-      answer: "If you're not satisfied with the initial shortlist, we'll provide a replacement shortlist at no additional cost. We're committed to finding the right fit for your team and will work with you until you find suitable candidates."
+      answer:
+        "If you're not satisfied with the initial set of candidates, we will provide a replacement set at no additional cost. We’ll continue verifying new candidates until you find the right fit.",
     },
     {
       question: "Do you handle the interview scheduling?",
-      answer: "Yes, we take care of all the logistics. Once you review the shortlist and select candidates you'd like to interview, we'll coordinate with both parties to schedule interviews at your convenience."
+      answer:
+        "Yes, we take care of all logistics. Once you review the verified candidates and choose who you'd like to move forward with, we coordinate the final interviews at your convenience.",
     },
     {
       question: "What information do you need to get started?",
-      answer: "We need basic information about the role (title, required tools, industry), your company, location preferences, urgency level, and your contact details. The more specific you are about requirements, the better we can match candidates."
-    }
+      answer:
+        "We need basic information about the role (title, required tools, industry), your company, location preferences, urgency level, and your contact details. The more specific you are about requirements, the better we can match candidates.",
+    },
   ];
 
   

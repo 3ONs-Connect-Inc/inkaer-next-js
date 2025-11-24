@@ -40,7 +40,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
                     ? "bg-blue-700 font-semibold"
                     : ""}`}
               >
-                Request Shortlist
+                Request Demo
               </a>
             </div>
           </div>

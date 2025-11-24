@@ -109,11 +109,10 @@ const RequestShortlist: React.FC = () => {
         <div className="mx-auto max-w-2xl">
           <div className="text-center mb-12">
             <h2 className="text-bold-white leading-tight text-white mb-12">
-              Request Your Shortlist
+              Request Demo
             </h2>
             <p className="mt-6 desc-white max-w-2xl mx-auto">
-              Tell us what you need and get your verified engineer shortlist in
-              48 hours.
+                Tell us what you need and see how we deliver verified, pre-interviewed engineers in 48 hours.
             </p>
           </div>
 
@@ -154,7 +153,7 @@ const RequestShortlist: React.FC = () => {
                     disabled={mutation.isPending}
                     className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                   >
-                    {mutation.isPending ? <BtnLoader /> : "Get My Shortlist"}
+                    {mutation.isPending ? <BtnLoader /> : "Request Demo"}
                   </Button>
                   <p className="text-sm text-gray-500 mt-3 text-center">
                     We&apos;ll reply within 24 hours.

@@ -34,7 +34,7 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ isActive, handleScroll }) => {
         className={`bg-blue-600 text-lg text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200
           ${isActive("#request-shortlist") ? "bg-blue-700 font-semibold" : ""}`}
       >
-        Request Shortlist
+        Request Demo
       </a>
         <Button
         onClick={logout}

@@ -3,24 +3,25 @@ import React from 'react';
 
 const HowItWorks: React.FC = () => {
    const steps = [
-    {
-      number: '1',
-      title: 'Share your role. We align on requirements.',
-      description: 'Tell us about your engineering role requirements, tech stack, and team culture fit.',
-      color: 'from-blue-500 to-blue-600'
+        {
+      number: "1",
+      title: "Share your role. We align on requirements.",
+      description: "Tell us about your engineering role requirements, tech stack, and team culture fit.",
+      color: "from-blue-500 to-blue-600",
     },
     {
-      number: '2', 
-      title: 'We deliver 3-5 verified engineers within 48h.',
-      description: 'Each candidate comes with verified portfolio, reviewed resume, and technical interview recording.',
-      color: 'from-green-500 to-green-600'
+      number: "2",
+      title: "We deliver 3–5 verified engineers within 48h.",
+      description:
+        "Each candidate comes with an Inkaer-verified portfolio, reviewed resume, and a recorded technical interview.",
+      color: "from-green-500 to-green-600",
     },
     {
-      number: '3',
-      title: 'You pick 1-2. We book interviews in 24h.',
-      description: 'Select your preferred candidates and we\'ll coordinate the final interviews within 24 hours.',
-      color: 'from-orange-500 to-orange-600'
-    }
+      number: "3",
+      title: "You pick 1–2. We book final interviews in 24h.",
+      description: "Select your preferred candidates and we’ll coordinate your final interviews within 24 hours.",
+      color: "from-orange-500 to-orange-600",
+    },
   ];
   return (
     <section id="how-it-works" className="py-6  bg-gray-50">

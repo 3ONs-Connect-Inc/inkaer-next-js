@@ -1,10 +1,26 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Hero: React.FC = () => {
+  const fullText =
+    "Every engineer comes with a verified portfolio, reviewed resume, and a condensed 10-minute technical interview recording so your team never wastes time screening.";
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < fullText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText((prev) => prev + fullText[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
+      }, 30); // Adjust speed here (lower = faster)
+
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, fullText]);
+  
   return (
     <section 
     className="relative bg-gradient-to-br from-blue-50 to-orange-50 py-20 sm:py-32 overflow-hidden">
@@ -23,10 +39,11 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Get <span className="text-blue-600">5 Verified</span>{" "}
-              <span className="text-orange-500">Engineers</span> in <br />
-              <span className="text-blue-400">48 Hours</span>
-              <span className="text-gray-900">.</span>
+              We Run Your <span className="text-blue-600">Technical</span>{" "}
+              <span className="text-orange-500">Interview</span> 
+              <p className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl xl:text-4xl">
+              Get Verified Engineers in 48 Hours.
+            </p>
             </motion.h1>
 
             <motion.p
@@ -35,8 +52,8 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Every shortlist includes an Inkaer-verified portfolio, a human
-              reviewed resume, and a condensed technical interview recording.
+              {displayedText}
+              <span className="animate-pulse ml-1">|</span>
             </motion.p>
 
             <motion.div
@@ -49,25 +66,25 @@ const Hero: React.FC = () => {
                 href="#request-shortlist"
                 className="btn-responsive  bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2"
               >
-                Request Shortlist
+                Request Demo
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#candidate-package"
                 className="bg-white flex  btn-responsive text-blue-600 border-2 border-blue-600 rounded-lg hover:bg-blue-50"
               >
-                 See Sample Shortlist
+                 See Sample Package
               </a>
             </motion.div>
 
-           <motion.p
+           {/* <motion.p
   className="mt-4 text-xs xs:text-sm text-gray-500 text-center sm:text-left"
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ delay: 0.8, duration: 0.8 }}
 >
   92% of Inkaer candidates pass their first interview.
-</motion.p>
+</motion.p> */}
 
           </motion.div>
 

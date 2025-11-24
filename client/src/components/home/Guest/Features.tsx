@@ -16,7 +16,7 @@ const Features: React.FC = () => {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:grid-cols-3">
           {features.map((feature, index) => (
             <div key={index} className="bg-gray-50 rounded-2xl p-4 sm:p-8 text-center hover:shadow-lg transition-shadow duration-300">
-              <div className={`text-bold-3xl font-extrabold mb-4 bg-gradient-to-r
+              <div className={`text-5xl font-extrabold mb-4 bg-gradient-to-r
                  ${feature.color === 'text-green-600' ? 
                  'from-green-500 to-green-700'
                   : feature.color === 'text-blue-600' 
