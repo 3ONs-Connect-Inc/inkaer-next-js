@@ -14,7 +14,7 @@ export const uploadFileToR2 = async (file: File, setIsLoading: (loading: boolean
       method: 'POST',
       body: formData,
     });  
-    
+      
     if (!response.ok) {
       const errorText = await response.text();
       console.error(`File upload failed: ${errorText}`);
@@ -24,7 +24,7 @@ export const uploadFileToR2 = async (file: File, setIsLoading: (loading: boolean
     const data = await response.json();
 
     toast.dismiss(toastId);  
-    toast.success("File uploaded successfully!");
+   // toast.success("File uploaded successfully!");
     return data.url; 
   } catch (error) {
     console.error("File upload failed:", error);

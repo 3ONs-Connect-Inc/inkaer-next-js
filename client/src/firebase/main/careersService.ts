@@ -1,4 +1,4 @@
-import type { CareerPost, CareersMeta } from '@/types'
+import type { CareerPost, CareersMeta } from '@/types/types'
 import { addDoc, collection, deleteDoc, doc, getDoc,  onSnapshot, orderBy, query, updateDoc } from 'firebase/firestore'
 import { db } from '../config'
 

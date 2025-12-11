@@ -4,6 +4,7 @@ import { AppProviders } from "../components/providers";
 import ScrollToTop from "@/components/ScrollToTop";
 import BackToTopButton from "@/components/BackToTopButton";
 import { ActiveHashProvider } from "@/context/ActiveHashContext";
+import { ExpireCodeWatcher } from "@/components/ExpireCodeWatcher";
  
 export const metadata: Metadata = {
   title: "Inkaer – Hiring the Best Engineers, Made Simple",
@@ -23,6 +24,7 @@ export default async function RootLayout({
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         <AppProviders >
+           <ExpireCodeWatcher /> 
            <ActiveHashProvider>
     <ScrollToTop />
           <BackToTopButton />

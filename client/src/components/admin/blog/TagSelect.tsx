@@ -1,5 +1,5 @@
 "use client";
-import { classNames, TAG_OPTIONS } from "@/types";
+import { classNames, TAG_OPTIONS } from "@/types/types";
 import { Tag } from "lucide-react";
 
 export default function TagSelect({

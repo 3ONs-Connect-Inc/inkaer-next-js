@@ -1,7 +1,7 @@
 
 import { Calendar, 
 //  CalendarCheck, CalendarDays, 
-  ChartColumn, CheckCircle,   Clock, Contact, FileCheck, FileText, Home, Mars, NotebookPen, NotepadText, Play, Rss, Settings, Shield, Tag, Target, TrendingDown, User, UserPlus, Users, UserSearch, UserX, Video } from "lucide-react";
+  ChartColumn, CheckCircle,   Clock, Codesandbox, Contact, FileCheck, FileText, Home, Mars, NotebookPen, NotepadText, Play, Rotate3d, Rss, Settings, Shield, Tag, Target, TrendingDown, User, UserPlus, Users, UserSearch, UserX, Video } from "lucide-react";
 
 import { VideoTab } from "@/components/home/VideoTab";
 import { PortfolioViewer } from "@/components/home/pdfViewer/PortfolioViewerWrapper";
@@ -75,7 +75,7 @@ export   const benefits = [
   ];
 
 export  const tabs = [
-  {
+  {  
     id: "interview",
     name: "Technical Interview Recording",
     icon: Play,
@@ -353,7 +353,6 @@ export const commonDomains = [
 ];
 
 
-
 //admin
 export const navbarLinks = [
     {
@@ -392,6 +391,17 @@ export const navbarLinks = [
             }, 
         ],
     },
+       {
+        title: "Portfolio Viewer",
+        links: [
+            {
+                label: "Portfolio Editor",
+                icon: Rotate3d,
+                path: "/admin/portfolio-editor",
+            },  
+           
+        ],
+    },
     // {
     //     title: "Events",
     //     links: [
@@ -424,6 +434,11 @@ export const navbarLinks = [
                 label: "Manage Users",
                 icon: UserPlus,  
                 path: "/admin/manage-users",
+            },
+               {
+                label: "Generate Url",
+                icon: Codesandbox,  
+                path: "/admin/generate-login-code",
             },
              {
                 label: "View Careers",

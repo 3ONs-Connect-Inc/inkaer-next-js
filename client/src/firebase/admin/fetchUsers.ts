@@ -1,7 +1,7 @@
 
 import { collection, deleteDoc, doc, onSnapshot, query, updateDoc } from "firebase/firestore";
 import { db } from "../config";
-import { User } from "@/types";
+import { User } from "@/types/types";
 
 
 

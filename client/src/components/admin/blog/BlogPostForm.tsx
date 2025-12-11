@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import { CATEGORIES, generateSlug, type BlogPost } from "@/types";
+import { CATEGORIES, generateSlug, type BlogPost } from "@/types/types";
 import { deleteFileFromR2 } from "@/utils/actions/r2Delete";
 import { uploadFileToR2 } from "@/utils/actions/r2Upload";
 import { updateBlogPost } from "@/firebase/main/blogService";

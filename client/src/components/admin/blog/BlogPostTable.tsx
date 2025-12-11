@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import moment from "moment";
 import { AdminTable, type Column } from "@/components/admin/AdminTable";
-import type { BlogPost } from "@/types";
+import type { BlogPost } from "@/types/types";
 import ConfirmDialog from "../ui/ConfirmDialog";
 
 export default function BlogPostTable({

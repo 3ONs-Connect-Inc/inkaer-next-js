@@ -4,7 +4,7 @@ import { Settings, Plus } from 'lucide-react'
 import { AdminTable, type Column, } from '@/components/admin/AdminTable'
 
 import { toast } from 'sonner'
-import type { CareersMeta } from '@/types'
+import type { CareersMeta } from '@/types/types'
 import { useCareersMeta, useUpsertCareersMeta } from '@/hooks/main/useCareers'
 
 

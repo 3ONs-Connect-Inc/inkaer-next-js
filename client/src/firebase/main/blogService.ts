@@ -14,7 +14,7 @@ import {
   limit,
   type Unsubscribe,
 } from "firebase/firestore";
-import type { BlogHeader, BlogPost } from "@/types";
+import type { BlogHeader, BlogPost } from "@/types/types";
 import { db } from "../config";
 import { deleteFileFromR2 } from "@/utils/actions/r2Delete";
 

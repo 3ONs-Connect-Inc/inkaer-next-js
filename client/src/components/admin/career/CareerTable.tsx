@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Edit3, Trash2 } from "lucide-react";
 import { AdminTable, type Column } from "@/components/admin/AdminTable";
 import ConfirmDialog from "@/components/admin/ui/ConfirmDialog";
-import type { CareerPost } from "@/types";
+import type { CareerPost } from "@/types/types";
 import { toast } from "sonner";
 import CareerFields from "./CareerFields";
 import { useCareerPosts, useDeleteCareer, useUpdateCareer } from "@/hooks/main/useCareers";

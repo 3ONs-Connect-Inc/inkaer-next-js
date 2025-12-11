@@ -1,6 +1,6 @@
 "use client";
 
-import { CATEGORIES, type BlogPost } from "@/types";
+import { CATEGORIES, type BlogPost } from "@/types/types";
 import TagSelect from "./TagSelect";
 import { useEffect, useState } from "react";
 import RichTextEditor from "@/components/RichTextEditor";

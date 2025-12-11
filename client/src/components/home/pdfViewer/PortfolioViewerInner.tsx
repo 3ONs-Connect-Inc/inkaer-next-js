@@ -17,7 +17,7 @@ export default function PortfolioViewerInner() {
     setNumPages(numPages);
     setPageNumber(1);
   };
-
+  
   return (
     <div className="flex flex-col items-center text-center">
       <div className="bg-white rounded-xl shadow-lg p-4 sm:p-8 max-w-2xl mx-auto w-full">

@@ -1,6 +1,6 @@
-import type { CareerPost } from "@/types";
+import type { CareerPost } from "@/types/types";
 import { adminDb } from "../admin"; 
-import type { BlogHeader, BlogPost } from "@/types";
+import type { BlogHeader, BlogPost } from "@/types/types";
 
 // Blog header
 export const getBlogHeaderServer = async (): Promise<BlogHeader | null> => {

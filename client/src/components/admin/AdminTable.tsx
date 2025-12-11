@@ -66,7 +66,7 @@ export function AdminTable<T>({
                   </tr>  
                 ))   
               )}
-            </tbody>
+            </tbody>  
           </table>
         </div>
       </div>

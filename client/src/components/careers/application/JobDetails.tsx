@@ -1,7 +1,7 @@
 import React from "react";
 import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Briefcase, Users, MapPin, Clock, DollarSign } from "lucide-react";
-import type { CareerPost } from "@/types";
+import type { CareerPost } from "@/types/types";
 
 interface JobDetailsProps {
   position: string;

@@ -13,7 +13,7 @@ interface SessionState {
   loading: boolean;
 }
   
-const initialState: SessionState = {
+const initialState: SessionState = {  
   user: null,
   role: null,
   loading: false, // start in loading until auth listener resolves

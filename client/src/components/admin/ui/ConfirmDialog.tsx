@@ -13,7 +13,7 @@ interface ConfirmDialogProps {
   title?: string;
   message: string | ReactNode;
   confirmText?: string;
-  cancelText?: string;
+  cancelText?: string; 
   onConfirm: () => void;
   onCancel: () => void;
 }

@@ -1,5 +1,5 @@
 "use client";
-import type { CareerPost } from "@/types";
+import type { CareerPost } from "@/types/types";
 import { useState } from "react";
 import RichTextEditor from '../../RichTextEditor';
 import { ListInput } from "@/components/ui/ListInput";

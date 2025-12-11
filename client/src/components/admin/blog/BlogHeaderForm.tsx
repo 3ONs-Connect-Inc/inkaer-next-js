@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Settings, Plus } from "lucide-react";
 import { AdminTable, type Column } from "@/components/admin/AdminTable";
-import type { BlogHeader } from "@/types";
+import type { BlogHeader } from "@/types/types";
 
 export default function BlogHeaderForm({
   header,

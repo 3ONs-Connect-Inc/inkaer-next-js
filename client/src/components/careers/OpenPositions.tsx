@@ -2,7 +2,7 @@
 
 import { Clock, DollarSign, MapPin, Users } from "lucide-react"
 import { motion, type Variants } from "framer-motion"
-import type { CareerPost } from "@/types"
+import type { CareerPost } from "@/types/types"
 import { useRouter } from "next/navigation";
 
 

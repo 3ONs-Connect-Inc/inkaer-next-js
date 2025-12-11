@@ -9,7 +9,7 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
-
+  
 export default function RegisterForm() {
   const { register, handleSubmit, formState } = useForm<RegisterInput>({
     resolver: zodResolver(registerSchema),

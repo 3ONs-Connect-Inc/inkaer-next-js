@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import type { BlogHeader, BlogPost } from "@/types";
+import type { BlogHeader, BlogPost } from "@/types/types";
 import { getBlogHeader, getBlogPosts, listenToBlogPosts } from "@/firebase/main/blogService";
 
 export const useBlogHeader = () => {

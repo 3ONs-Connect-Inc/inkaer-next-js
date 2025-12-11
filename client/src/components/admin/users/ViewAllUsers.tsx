@@ -5,7 +5,7 @@ import {
   subscribeToUsers,
 } from "@/firebase/admin/fetchUsers";
 import { AdminTable } from "../AdminTable";
-import { User } from "@/types";
+import { User } from "@/types/types";
 
 const ViewAllUsers: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);

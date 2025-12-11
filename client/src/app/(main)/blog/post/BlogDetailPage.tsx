@@ -9,7 +9,7 @@ import { useBlogPost } from "@/hooks/main/useBlog";
 import ArticleLayout from "@/components/blog/ArticleLayout";
 
 export default function BlogDetails() {
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams();//query parameters
   const slug = searchParams.get("slug");
   const queryClient = useQueryClient();
 
@@ -38,7 +38,7 @@ export default function BlogDetails() {
   }
 
   return (
-    <ArticleLayout
+    <ArticleLayout  
       title={post.title}
       excerpt={post.excerpt}
       author={post.author}

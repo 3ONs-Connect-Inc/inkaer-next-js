@@ -1,7 +1,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { getBlogHeader, getBlogPostBySlug, getBlogPosts } from "@/firebase/main/blogService";
-import type { BlogHeader, BlogPost } from "@/types";
+import type { BlogHeader, BlogPost } from "@/types/types";
 
 // Blog header
 export const useBlogHeader = () => {

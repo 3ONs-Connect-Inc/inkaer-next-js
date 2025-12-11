@@ -3,7 +3,7 @@
 import React from "react";
 import { useManageUsers } from "@/hooks/admin/useManageUsers";
 import { AdminTable } from "../AdminTable";
-import { User } from "@/types";
+import { User } from "@/types/types";
 import { useUserSearch } from "./useUserSearch";
 import { SearchDropdown } from "@/components/ui/SearchDropdown";
 

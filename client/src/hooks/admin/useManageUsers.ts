@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { User } from "@/types";
+import { User } from "@/types/types";
 import { subscribeToUsers, toggleUserRole } from "@/firebase/admin/fetchUsers";
 
 export function useManageUsers() {

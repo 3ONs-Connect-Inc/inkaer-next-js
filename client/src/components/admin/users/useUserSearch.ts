@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "@/firebase/config";
-import { User } from "@/types";
+import { User } from "@/types/types";
 
 export function useUserSearch() {
   const [allUsers, setAllUsers] = useState<User[]>([]);

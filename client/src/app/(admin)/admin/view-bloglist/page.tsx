@@ -1,6 +1,6 @@
 "use client";
 import BlogHeaderForm from "@/components/admin/blog/BlogHeaderForm";
-import type { BlogHeader, BlogPost } from "@/types";
+import type { BlogHeader, BlogPost } from "@/types/types";
 import { toast } from "sonner";
 import BlogPostForm from "@/components/admin/blog/BlogPostForm";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";

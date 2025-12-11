@@ -68,10 +68,11 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({ header, posts }) => {
                     </span>
                   </div>
                   <Link
+                  // query parameters
                      href={`/blog/post/?id=${post.id}&slug=${encodeURIComponent(post.slug)}`}
                     className="text-sm sm:text-base inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                   >
-                    Read more
+                    Read more  
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>

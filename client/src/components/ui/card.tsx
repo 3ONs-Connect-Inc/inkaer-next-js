@@ -18,14 +18,18 @@ Card.displayName = "Card"
 
 const CardHeader = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+  React.HTMLAttributes<HTMLDivElement> & { compact?: boolean }
+>(({ className, compact, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex flex-col space-y-1.5 sm:p-6 p-2", className)}
+    className={cn(
+      compact ? "p-3 pb-1 space-y-1" : "flex flex-col space-y-1.5 sm:p-6 p-2",
+      className
+    )}
     {...props}
   />
-))
+));
+
 CardHeader.displayName = "CardHeader"
 
 const CardTitle = React.forwardRef<
@@ -35,7 +39,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
+      "text-xl xs:text-2xl font-semibold leading-none tracking-tight",
       className
     )}
     {...props}
@@ -57,10 +61,18 @@ CardDescription.displayName = "CardDescription"
 
 const CardContent = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("xs:p-6 p-3 pt-0", className)} {...props} />
-))
+  React.HTMLAttributes<HTMLDivElement> & { compact?: boolean }
+>(({ className, compact, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      compact ? "p-3 pt-1 space-y-1" : "xs:p-6 p-3 pt-0",
+      className
+    )}
+    {...props}
+  />
+));
+
 CardContent.displayName = "CardContent"
 
 const CardFooter = React.forwardRef<

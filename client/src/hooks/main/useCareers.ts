@@ -1,5 +1,5 @@
 import { createCareerPost, deleteCareerPost, getCareersMeta, listCareerPosts, updateCareerPost, upsertCareersMeta } from '@/firebase/main/careersService'
-import type { CareerPost, CareersMeta } from '@/types'
+import type { CareerPost, CareersMeta } from '@/types/types'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 
 export function useCareerPosts() {
