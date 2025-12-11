@@ -52,11 +52,7 @@ npm install pdfjs-dist react react-dom react-hook-form react-pdf react-redux
 npm install --save-dev @tailwindcss/typography @types/node @types/react @types/react-dom autoprefixer postcss tailwindcss typescript
 https://inkaer-main-backend.onrender.com
 https://inkaer.com
-3ONs-Connect-Inc
-3ONs-Connect-Inc-inkaer-next-j
-
 
 https://github.com/3ONs-Connect-Inc/inkaer-next-js.git
 
 
-3

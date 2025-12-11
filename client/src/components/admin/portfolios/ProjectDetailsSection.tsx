@@ -4,40 +4,69 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const toolOptions = ["SolidWorks", "MATLAB", "AutoCAD", "ANSYS"];
 
 export default function ProjectDetailsSection({ form, update }: any) {
+
+  // Toggle tool select/deselect
+  const handleToolSelect = (tool: string) => {
+    const alreadySelected = form.toolsUsed.includes(tool);
+
+    if (alreadySelected) {
+      // REMOVE tool
+      update(
+        "toolsUsed",
+        form.toolsUsed.filter((t: string) => t !== tool)
+      );
+    } else {
+      // ADD tool
+      update("toolsUsed", [...form.toolsUsed, tool]);
+    }
+  };
+
   return (
     <div className="space-y-6 p-6">
-        <h2 className="text-xl font-semibold">Project Details</h2>
+      <h2 className="text-xl font-semibold">Project Details</h2>
 
-        {/* Tools */}
-        <div>
-          <label className="font-medium">Tools Used</label>
-          <Select
-            onValueChange={(tool) => update("toolsUsed", [...form.toolsUsed, tool])}
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Select tools" />
-            </SelectTrigger>
-            <SelectContent>
-              {toolOptions.map((tool) => (
-                <SelectItem key={tool} value={tool}>
-                  {tool}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+      {/* Tools */}
+      <div>
+        <label className="font-medium">Tools Used</label>
 
-          <div className="flex flex-wrap gap-2 mt-2">
-            {form.toolsUsed.map((tool: string) => (
-              <span
+        <Select onValueChange={handleToolSelect}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select tools" />
+          </SelectTrigger>
+
+          <SelectContent>
+            {toolOptions.map((tool) => (
+              <SelectItem
                 key={tool}
-                className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm"
+                value={tool}
+                // Show checkmark style (optional)
+                className={form.toolsUsed.includes(tool) ? "bg-blue-50" : ""}
               >
                 {tool}
-              </span>
+              </SelectItem>
             ))}
-          </div>
-        </div>
+          </SelectContent>
+        </Select>
 
+        {/* Selected badges */}
+        <div className="flex flex-wrap gap-2 mt-2">
+          {form.toolsUsed.map((tool: string) => (
+            <button
+              key={tool}
+              onClick={() =>
+                update(
+                  "toolsUsed",
+                  form.toolsUsed.filter((t: string) => t !== tool)
+                )
+              }
+              className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm hover:bg-blue-200"
+            >
+              {tool} ✕
+            </button>
+          ))}
+        </div>
+      </div>
+      
         {/* Status Dropdowns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <SelectField
