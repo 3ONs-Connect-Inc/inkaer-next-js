@@ -189,7 +189,6 @@ Create the following file:
 ###  GitHub Actions Configuration
 
 ```yaml
-name: Deploy Next.js App to Hostinger
 
 name: Build frontend and deploy worker
 
